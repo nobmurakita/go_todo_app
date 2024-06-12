@@ -10,13 +10,13 @@ linters:
   disable-all: true
   enable:
     - goimports
-    - deadcode
+    - unused
     - errcheck
     - gocognit
     - gocritic
     - gocyclo
     - gofmt
     - govet
-    - missspell
+    - misspell
     - staticcheck
     - whitespace
