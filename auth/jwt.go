@@ -15,6 +15,11 @@ import (
 	"github.com/nobmurakita/go_todo_app/entity"
 )
 
+const (
+	RoleKey     = "role"
+	UserNameKey = "user_name"
+)
+
 //go:embed cert/secret.pem
 var rawPrivKey []byte
 
@@ -56,11 +61,6 @@ func parse(rawKey []byte) (jwk.Key, error) {
 	}
 	return key, nil
 }
-
-const (
-	RoleKey     = "role"
-	UserNameKey = "user_name"
-)
 
 func (j *JWTer) GenerateToken(ctx context.Context, u entity.User) ([]byte, error) {
 	tok, err := jwt.NewBuilder().
